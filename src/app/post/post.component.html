@@ -6,10 +6,35 @@
 <div class="card-container">
     <div *ngIf="user['name'] == ''"> Click on any User to see the recent posts </div>
     <div class="card card-large" *ngFor="let post of user['recent_posts']" tabindex="0">
-        <div class="col">
+        <div class="col" (click)="openPost(post, content)">
             <h3>{{ post['Title'] }}</h3>
             <p> {{ post['content'] }}</p>
             <div> Written On: {{ post['createdAt'] | date: 'mediumDate' }}</div>
         </div>
     </div>
 </div>
+
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Post</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-6">
+				<label>Title</label>
+				<div class="input-group">
+					{{ currentPost['Title'] }}
+				</div>
+				<label>Content</label>
+				<div class="input-group">
+					<p>{{ currentPost['content'] }}</p>
+				</div>
+                <div> Written On: {{ currentPost['createdAt'] | date: 'mediumDate' }}</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('Cross click')">Close</button>
+	</div>
+</ng-template>
