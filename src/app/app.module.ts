@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { PostComponent } from './post/post.component';
-import { ModalComponent } from './shared/component/modal/modal.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
