@@ -26,6 +26,9 @@ The aim of this project is to demostrate the approach being used for the communi
 1. User information is being first fetched from User API in user component.
 2. When user click on any of User card, the data from user component is being passed from User (Child) component to App(Parent) component by using @Output Decorator (EventEmitter) and App component passes it to Post(Another Child) Component by using @Input Decorator.
 3. While create new post, user details(User id) is being passed to Modal component from Post component by using @Input Decorator.
+
+## Tools used
+1. Angular DevTool Chrome Extension is being used for debugging the data among the components.
 ______________________________________________________________________________________
 ## Angular Project Guide
 
