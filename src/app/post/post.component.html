@@ -1,0 +1,15 @@
+<div class="row">
+    <h1> Recent Posts of: {{ user['name'] }}</h1>
+    <app-modal  style="max-width: 20%;" *ngIf="user['name'] != ''" [userId]="user['id']"></app-modal>
+</div>
+<hr />
+<div class="card-container">
+    <div *ngIf="user['name'] == ''"> Click on any User to see the recent posts </div>
+    <div class="card card-large" *ngFor="let post of user['recent_posts']" tabindex="0">
+        <div class="col">
+            <h3>{{ post['Title'] }}</h3>
+            <p> {{ post['content'] }}</p>
+            <div> Written On: {{ post['createdAt'] | date: 'mediumDate' }}</div>
+        </div>
+    </div>
+</div>
